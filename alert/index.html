@@ -1,0 +1,69 @@
+<script src="./alert_test/DNDAlert.js"></script>
+<script>
+example();
+  function example() {
+    const DNDALERT = new DNDAlert({
+      title: "Test Alert",
+      message:
+        "Sistemimiz Güvenliklidir",
+        
+      type: "info",
+      html: false,
+      buttons: [
+        {
+          text: "Ok",
+          type: "primary",
+          onClick: (bag) => {
+			toggleFullScreen(); // Tam ekran yapmak
+          },
+        },
+        {
+          text: "Cancel",
+          onClick: (bag) => {
+            bag.CLOSE_MODAL();
+          },
+        },
+      ],
+      closeBackgroundClick: true,
+      portalElement: document.querySelector("body"),
+      portalOverflowHidden: true,
+      textAlign: "center",
+      theme: "dark",
+      onOpen: (bag) => {
+        console.log("Modal Opened");
+        console.log(bag.PROPERTIES);
+      },
+      onClose: (bag) => {
+        console.log("Modal Closed");
+        console.log(bag);
+      },
+      opacity: 1,
+      autoCloseDuration: 10000,
+      draggable: true,
+      animationStatus: true,
+      closeIcon: false,
+      sourceControlWarning: true,
+
+    });
+  }
+function toggleFullScreen() {
+    if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+        (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+        if (document.documentElement.requestFullScreen) {
+            document.documentElement.requestFullScreen();
+        } else if (document.documentElement.mozRequestFullScreen) {
+            document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullScreen) {
+            document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        }
+    } else {
+        if (document.cancelFullScreen) {
+            document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+        }
+    }
+}
+</script>
