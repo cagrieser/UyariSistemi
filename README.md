@@ -29,14 +29,7 @@ Proje, JavaScript, PHP ve Fetch API kullanılarak geliştirilmiş bir senkronize
 - User işlemlerine erişim WWW-Authenticate ile sağlanabilmektedir.
 - Proje local sunucuda belirli bir amaca yönelik olarak çalıştırıldığı düşünüldüğünde ve örnek proje amacı ile geliştirildiği üzeri herhangi bir zafiyet araştırması yapılmamıştır.
 
->Görsel 1 :
+>Görsel :
 
 ![img](/image/x.jpg)
 
->Görsel 2 :
-
-![img](/image/y.jpg)
-
->Kayıt 1 :
-
-![img](/image/x.gif)
