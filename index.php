@@ -14,20 +14,19 @@ header("Expires: 0"); // Proxies.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Alarm Sistemi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="resim.css">
+    <link rel="stylesheet" href="./css/resim.css">
     <!-- JavaScript -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- https://fontawesome.com/icons/ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-<script src="./fileExists.js"></script>
 
 
    <style>::-webkit-scrollbar {
   display: none;
   }</style>
 
-<link rel="stylesheet" href="./pure.css">
+<link rel="stylesheet" href="./css/pure.css">
 
 
 
@@ -40,7 +39,7 @@ header("Expires: 0"); // Proxies.
 <img class="large-image">
 </div>
 <!-- Photo Buton -->
-<audio id="myAudio" src="./x.mp3"></audio>
+<audio id="myAudio" src="./audio/x.mp3"></audio>
 
 <div class="columns">
   <div class="column">
@@ -623,7 +622,7 @@ ico6.addEventListener("click", function() {
 function StopIconAlarm(ID) {
     const formIconAlarm = new FormData();
     formIconAlarm.append('id', ID);
-    fetch('./voice.php', {
+    fetch('./StopVoice.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -808,7 +807,7 @@ cam_ico_6.addEventListener("click", function() {
 function IMGStopAlarm(ID) {
     const ImgIconAlarm = new FormData();
     ImgIconAlarm.append('id', ID);
-    fetch('./image.php', {
+    fetch('./StopCam.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -973,7 +972,7 @@ function Photo_Ico_False_6() {
 };
 
 </script>
-<script src="./resim.js"></script>
+<script src="./js/resim.js"></script>
 <script src="./js/app2.js"></script>
 <script src="./js/recorder.js"></script>
 </head>

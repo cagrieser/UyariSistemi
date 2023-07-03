@@ -69,7 +69,7 @@ if ($_SERVER['PHP_AUTH_USER'] == 'user1') {
   </style>
 
 
-<link rel="stylesheet" href="./pure.css">
+<link rel="stylesheet" href="./css/pure.css">
 
 
 
@@ -182,7 +182,7 @@ if($warning == "etkin"){
 </div>
 <script type="text/javascript">
 let Voice_ID,User_ID,StatusVoice;
-let notificationMP3="./notification.mp3";
+let notificationMP3="./audio/notification.mp3";
 let NotiMP3=new Audio(notificationMP3);
 User_ID=document.querySelector("#voice_play").getAttributeNode("user").nodeValue;
 
@@ -302,7 +302,7 @@ FetchLog(Bolge); // Bölge alınır
       formData.append('Konum', Konum_Gelen); // Konum=GPRS Verisi Eklenir
 
 
-      fetch('./profil.php', { // FETCH API ile POST verisi gönderilir.
+      fetch('./UserPanel.php', { // FETCH API ile POST verisi gönderilir.
         method: 'POST',
         body: formData // FormData yukarıda Append ile verildi
       })/*
@@ -324,7 +324,7 @@ function selected_status(){
 }
   function durum_guncelle(){
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "./profil.php"); // Aşağıdada olabilir.
+  xhr.open("POST", "./UserPanel.php"); // Aşağıdada olabilir.
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function() {
       if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
@@ -360,7 +360,7 @@ function GPRSTimeText(){
       formData.append('durum_kodu', Durum_Kodu);
 
 
-      fetch('./profil.php', {
+      fetch('./UserPanel.php', {
         method: 'POST',
         body: formData
       })

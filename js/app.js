@@ -113,7 +113,7 @@ function stopRecording() {
 
 	//create the wav blob and pass it on to createDownloadLink
 	rec.exportWAV(createDownloadLink);
-	
+
 }
 
 function createDownloadLink(blob) {
@@ -154,12 +154,12 @@ let gonder=document.getElementById("gonderButton");
 		  xhr.onload=function(e) {
 		      if(this.readyState === 4) {
 		         // console.log("Server returned: ",e.target.responseText);
-				 
+
 		      }
 		  };
 		  var fd=new FormData();
 		  fd.append("audio_data",blob, filename);
-		  xhr.open("POST","profil.php",true);
+		  xhr.open("POST","UserPanel.php",true);
 		  xhr.send(fd);
 		gonder.innerHTML = "Gönderildi&nbsp<i class='fa-solid fa-check-double'></i>";
 		setTimeout(function () {
